@@ -149,42 +149,7 @@ h2 {
 }
 /* Section Titles Ends */
 
-/* Navbar Style Start */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 85.333px;
-  background: var(--white);
-  box-shadow: 0px 5.333px 80px 0 rgba(0, 0, 0, 0.1);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-.navbar--items > ul {
-  list-style: none;
-  display: flex;
-  align-items: flex-start;
-  gap: 42.667px;
-  text-decoration: none;
-}
-.navbar--items ul > li > a {
-  text-decoration: none;
-}
-/* Navbar Content */
-.navbar--content {
-  color: var(--darkblue);
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
-  cursor: pointer;
-}
-.navbar--active-content {
-  color: var(--primary);
-}
-/* Navbar Styler Ends */
+
 
 /* Hero Section Style */
 .hero--section {
@@ -746,3 +711,41 @@ input[type="checkbox"] {
 }
 
 /* Responsive Screens Ends*/
+/* Space between the social icons */
+.social-links {
+  display: flex;
+  gap: 15px; /* Adjust this value for more or less space */
+  margin-bottom: 20px; /* Space between the icons and the button */
+}
+
+/* Individual social icon colors */
+.social-links a:nth-child(1) .social-icon {
+  color: #25D366; /* WhatsApp */
+}
+.social-links a:nth-child(2) .social-icon {
+  color: #4267B2; /* Facebook */
+}
+.social-links a:nth-child(3) .social-icon {
+  color: #0077B5; /* LinkedIn */
+}
+.social-links a:nth-child(4) .social-icon {
+  color: #333; /* GitHub */
+}
+.social-links a:nth-child(5) .social-icon {
+  color: #000000; /* TikTok */
+}
+
+/* Icon styling */
+.social-icon {
+  font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #ff5722; /* Optional hover effect */
+}
+
+/* Add spacing between button and icons */
+.btn {
+  margin-top: 10px; /* Adjust as needed */
+}

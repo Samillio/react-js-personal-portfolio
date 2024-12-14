@@ -3,6 +3,8 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./Pages/Home/Navbar";
 import Home from "./Pages/Home/Homescreen";
+import Policy from "./Pages/Home/Homescreen";
+import 'font-awesome/css/font-awesome.min.css'; // Import Font Awesome
 
 function App() {
   return (
@@ -12,6 +14,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />}></Route>
+            <Route path="/policy" element={<Policy />}></Route>
             <Route path="*" element={<div>404 Not Found</div>}></Route>
           </Routes>
         </div>

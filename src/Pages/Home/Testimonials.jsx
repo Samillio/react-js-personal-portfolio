@@ -1,48 +1,60 @@
-import data from "../../data/index.json";
+import React from 'react';
 
-export default function Testimonial() {
+const testimonials = [
+  {
+    company: 'Architecture',
+    logo: '🌐', // Replace with an image URL if needed
+    feedback:
+      "I am incredibly impressed with the website created for my architecture business. From the initial consultation to the final product, the team truly understood my vision and executed it flawlessly. The design is sleek, modern, and perfectly showcases my work in the best light. The attention to detail and user experience is exceptional. It’s not just a website; it’s a powerful tool that enhances my business's online presence and helps potential clients easily navigate my portfolio. I highly recommend their services to anyone looking for top-notch design and professional support.",
+    name: 'Architecture Kirui',
+    position: 'Director Lennyways Limited',
+    image: 'https://via.placeholder.com/50', // Replace with actual image
+  },
+  {
+    company: 'Doctor Services',
+    logo: '💻', // Replace with an image URL if needed
+    feedback:
+      "I am extremely pleased with the website created for my medical practice. From the outset, the team took the time to understand my needs and designed a site that perfectly reflects the professional, compassionate care I provide to my patients. The website is user-friendly, easy to navigate, and offers all the necessary information my patients need, including appointment scheduling and resources about services. It has enhanced my practice's online presence and made it easier for people to find and connect with me. I highly recommend their services to any healthcare provider looking to elevate their online presence.",
+    name: 'Dr. Frank',
+    position: 'Doctor',
+    image: 'https://via.placeholder.com/50', // Replace with actual image
+  },
+];
+
+const Testimonials = () => {
   return (
-    <section className="testimonial--section" id="testimonial">
-      <div className="portfolio--container-box">
-        <div className="portfolio--container">
-          <p className="sub--title">Clients Feedback</p>
-          <h2 className="sections--heading">Customer Feedback</h2>
-        </div>
-      </div>
-      <div className="portfolio--section--container">
-        {data?.testimonial?.map((item, index) => (
-          <div key={index} className="testimonial--section--card">
-            <div className="testimonial--section--card--review">
-              {Array.from({ length: 5 }, (reviews, index) => (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="27"
-                  height="26"
-                  viewBox="0 0 27 26"
-                  fill="none"
-                >
-                  <path
-                    d="M12.0945 0.953177C12.5528 -0.135435 14.1138 -0.135434 14.5722 0.95318L17.2772 7.37836C17.4705 7.8373 17.9074 8.15087 18.4089 8.19059L25.4302 8.74669C26.6199 8.84091 27.1022 10.3076 26.1959 11.0746L20.8464 15.6016C20.4643 15.925 20.2973 16.4324 20.4141 16.9158L22.0484 23.6847C22.3253 24.8315 21.0625 25.7381 20.044 25.1235L14.0327 21.4961C13.6033 21.237 13.0633 21.237 12.634 21.4961L6.62265 25.1235C5.60415 25.7381 4.34127 24.8315 4.61818 23.6847L6.25256 16.9158C6.3693 16.4324 6.20243 15.925 5.82034 15.6016L0.47075 11.0746C-0.435624 10.3076 0.0467572 8.84091 1.23639 8.74669L8.25781 8.19059C8.75933 8.15087 9.19621 7.8373 9.38942 7.37836L12.0945 0.953177Z"
-                    fill="#006B6A"
-                  />
-                </svg>
-              ))}
+    <div id="testimonials" className="bg-gray-900 text-white py-16 px-8">
+      <h2 className="text-center text-4xl font-bold mb-4">What Our Clients Say</h2>
+      <p className="text-center text-lg max-w-3xl mx-auto mb-12 text-gray-400">
+        Our services span diverse areas, including architecture and doctor services. We ensure our clients receive exceptional quality and expertise in every project. Here's what our clients have to say about working with us.
+      </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        {testimonials.map((testimonial, index) => (
+          <div
+            key={index}
+            className="bg-gray-800 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+          >
+            <div className="flex items-center mb-4">
+              <div className="text-3xl mr-4">{testimonial.logo}</div>
+              <h3 className="text-2xl font-bold">{testimonial.company}</h3>
             </div>
-            <p className="text-md">{item.description}</p>
-            <div className="testimonial--section--card--author--detail">
-              <img src={item.src} alt="Avatar" />
+            <p className="italic mb-6">"{testimonial.feedback}"</p>
+            <div className="flex items-center">
+              <img
+                src={testimonial.image}
+                alt={`${testimonial.name}'s photo`}
+                className="w-12 h-12 rounded-full mr-4"
+              />
               <div>
-                <p className="text-md testimonial--author--name">
-                  {item.author_name}
-                </p>
-                <p className="text-md testimonial--author--designation">
-                  {item.author_designation}
-                </p>
+                <h4 className="font-bold">{testimonial.name}</h4>
+                <p className="text-sm text-gray-400">{testimonial.position}</p>
               </div>
             </div>
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
-}
+};
+
+export default Testimonials;
